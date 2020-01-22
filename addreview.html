@@ -19,10 +19,10 @@
       <h1>Hotel Reviews</h1>
       <h3>Informative Hotel Reviews!</h3>
       <hr>
-      <a href="/" class="btn btn-danger btn-lg">
+      <a href="searchreviews.html" class="btn btn-danger btn-lg">
         <span class="fa fa-eye"></span> Search Hotel Reviews</a>
-      <a href="/all" class="btn btn-danger btn-lg">
-        <span class="fa fa-th-list"></span> All Hotel Reviews</a>
+      <a href="homepage.html" class="btn btn-danger btn-lg">
+        <span class="fa fa-th-list"></span> Reviews Home</a>
     </div>
     <div class="row">
 
@@ -30,7 +30,7 @@
 
         <div class="card">
           <div class="card-header">
-            Add Reviews
+            ADD NEW REVIEW
           </div>
           <div class="card-body">
             <form action="" method="POST" role="form">
@@ -45,15 +45,23 @@
                 <input type="text" class="form-control" id="role" placeholder="">
               </div>
 
-              <div class="form-group">
-                <label for="">Rating</label>
-                <input type="text" class="form-control" id="age" placeholder="">
-              </div>
+            
+         
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Rating</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
 
-              <div class="form-group">
-                <label for="">Comments</label>
-                <input type="text" class="form-control" id="force-points" placeholder="">
-              </div>
+            <div class="form-group">
+              <label for="">Comments</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
 
             </form>
             <br>
