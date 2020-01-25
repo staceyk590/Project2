@@ -28,11 +28,11 @@ $("#search-btn").on("click", function() {
       // otherwise
       // append the Review name
       $("#well-section").append("<h2>" + data.city + "</h2>");
-      // the role
+      // the hotel
       $("#well-section").append("<h3>Hotel: " + data.hotel + "</h3>");
-      // the age
-      $("#well-section").append("<h3>Ratings: " + data.ratings + "</h3>");
-      // and the force points
+      // the rating
+      $("#well-section").append("<h3>Ratings: " + data.rating + "</h3>");
+      // and the comments
       $("#well-section").append("<h3>Comments: " + data.comments + "</h3>");
     }
   });
