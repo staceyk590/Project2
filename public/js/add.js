@@ -7,6 +7,8 @@ $("#add-btn").on("click", function(event) {
 
   // make a newReview obj
   var newReview = {
+    //username from usernam input
+    Username: $("#username").val().trim(),
     // city from city input
     City: $("#city").val().trim(),
     // hotel from hotel input
@@ -18,8 +20,9 @@ $("#add-btn").on("click", function(event) {
   };
 
   // send an AJAX POST-request with jQuery
-  $.post("localhost:7777/api/new", newReview)
+  // $.post("localhost:7777/api/new", newReview)
     // on success, run this callback
+    $.post("/api/posts", newReview)
     .then(function(data) {
       // log the data we found
       console.log(data);

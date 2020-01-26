@@ -1,7 +1,7 @@
-module.exports = function(sequelize, DaTaTypes) {
+module.exports = function(sequelize, DataTypes) {
     const Hotel = sequelize.define("Hotel", {
         hotelName: {
-            type: DaTaTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
@@ -9,7 +9,7 @@ module.exports = function(sequelize, DaTaTypes) {
         },
 
         hotelAddress: {
-            type: DaTaTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
@@ -17,7 +17,7 @@ module.exports = function(sequelize, DaTaTypes) {
         },
 
         hotelCity: {
-            type: DaTaTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
@@ -25,13 +25,13 @@ module.exports = function(sequelize, DaTaTypes) {
         },
 
         reviewText: {
-            type: DaTaTypes.TEXT,
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: [10]
         },
 
         hotelRatings: {
-            type: DaTaTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             validate: [1]
         }
