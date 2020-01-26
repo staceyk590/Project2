@@ -1,0 +1,27 @@
+<h1>Hotel Reviews</h1>
+
+<h2>Please explain your star rating</h2>
+
+<ul>
+  {{#each reviews}}
+    {{#unless post}}
+      {{> reviews/review-block post=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Add a review</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="hotelName">Hotel Name:</label>
+    <input type="text" id="hotelName" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="hotelReview">Review: </label><br>
+    <input type="text" id="hotelReview" name="review">
+  </div>
+
+  <button type="submit">Add review</button>
+</form>
