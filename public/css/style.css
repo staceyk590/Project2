@@ -1,0 +1,42 @@
+.container {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  background-color: #e8f9ff;
+}
+
+.cool-font {
+  font-family: Shrikhand, cursive;
+  font-size: 24px;
+  color: #1da1f2;
+}
+
+.jumbotron {
+  font-family: Shrikhand, cursive;
+  color: red;
+  background-color: #1da1f2;
+}
+
+input,
+textarea {
+  margin: 20px;
+}
+
+.btn {
+  margin: 10px;
+  font-family: Shrikhand, cursive;
+  color: #1da1f2;
+  background-color: white;
+  border-color: #1da1f2;
+  border-style: solid;
+  border-width: 2px;
+}
+
+p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.thumbnail img {
+  height: 150px;
+  object-fit: cover;
+}
