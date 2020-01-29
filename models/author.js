@@ -1,7 +1,7 @@
-module.exports = function(sequelize, DaTaTypes) {
+module.exports = function(sequelize, DataTypes) {
     const Author = sequelize.define("Author", {
         authorName: {
-            type: DaTaTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
