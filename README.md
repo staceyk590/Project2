@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 5 Star
 
 ### Project 2
@@ -53,3 +54,4 @@ How to use the **5 Star** application:
 # Resources
 
 ---
+=======
