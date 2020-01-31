@@ -20,7 +20,6 @@ $("#add-btn").on("click", function(event) {
   };
 
   // send an AJAX POST-request with jQuery
-  // $.post("localhost:7777/api/new", newReview)
     // on success, run this callback
     $.post("/api/posts", newReview)
     .then(function(data) {
