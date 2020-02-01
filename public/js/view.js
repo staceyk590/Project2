@@ -53,34 +53,7 @@ $("#search-btn").on("click", function() {
       $("#well-section").append("<h3>Comments: " + data.reviewText + "</h3>");
     }
 
-   
-  // authorId = "/?author_id=" + authorId;
-  // Using a RegEx Pattern to remove spaces from searchedCharacter
-  // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
   
-  // run an AJAX GET-request for our servers api,
-  // including the user's character in the url
-  // $.get("/api/Hotel/" + searchedHotel+"/"+searchedCity, function(data) {
-  //   // log the data to our console
-  //   console.log(data);
-  //   // empty to well-section before adding new content
-  //   $("#well-section").empty();
-  //   // if the data is not there, then return an error message
-  //   if (!data) {
-  //     $("#well-section").append("<h2> No Review was found </h2>");
-  //   }
-  //   else {
-  //     // otherwise
-  //     // append the Review name
-  //     $("#well-section").append("<h2>" +"City:" +" " + data.hotelCity + "</h2>");
-  //     // the hotel
-  //     $("#well-section").append("<h3>Hotel: " + data.hotelName + "</h3>");
-  //     // the rating
-  //     $("#well-section").append("<h3>Ratings: " + data.hotelRatings + "</h3>");
-  //     // and the comments
-  //     $("#well-section").append("<h3>Comments: " + data.reviewText + "</h3>");
-  //   }
-  // });
   });
 });
 });
