@@ -10,13 +10,14 @@ $("#add-btn").on("click", function(event) {
     //username from usernam input
     Username: $("#username").val().trim(),
     // city from city input
-    City: $("#city").val().trim(),
+    hotelCity: $("#city").val().trim(),
     // hotel from hotel input
-    Hotel: $("#hotel").val().trim(),
+    hotelName: $("#hotel").val().trim(),
     // ratings from ratings input
-    Ratings: $("#rating").val().trim(),
+    hotelRatings: parseInt($("#rating").val().trim()),
     // comments from comments input
-    Comments: $("#comments").val().trim()
+    reviewText: $("#comments").val().trim(),
+    hotelAddress: "monash bootcamp"
   };
 
   function createNewRow(newReview) {
@@ -72,7 +73,6 @@ $("#add-btn").on("click", function(event) {
       // log the data we found
       console.log(data);
       // tell the user we're adding a review with an alert window
-      alert("Adding review...");
     });
 
   // empty each input box by replacing the value with an empty string
