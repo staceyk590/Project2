@@ -46,10 +46,11 @@ module.exports = function(app) {
 
   // POST route for saving a new post
   app.post("/api/posts", function(req, res) {
-    res.send(req.body);
-    db.Post.create(req.body).then(function(dbPost) {
+    console.log(req.body);
+    req.body.hotelRatings = parseInt(req.body.hotelRatings);
+    db.Hotel.create(req.body).then(function(dbPost) {
       res.json(dbPost);
-    });
+    }).catch((err) => console.log(err));
   });
 
   // DELETE route for deleting posts
