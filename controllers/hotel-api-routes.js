@@ -18,8 +18,9 @@ module.exports = function(app) {
     // In this case, just db.Post
     db.Hotel.findOne({
       where: {
-        id: req.params.id
-      },
+        city: req.params.city,
+        name: req.params.name
+        },
       include: [db.Post]
     }).then(function(dbHotel) {
       res.json(dbHotel);
