@@ -27,13 +27,13 @@ module.exports = function(sequelize, DataTypes) {
         reviewText: {
             type: DataTypes.TEXT,
             allowNull: false,
-            validate: [10]
+            // validate: [10]
         },
 
         hotelRatings: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            validate: [1]
+            // validate: [1]
         }
     });
     return Hotel;
