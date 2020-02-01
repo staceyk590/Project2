@@ -12,18 +12,25 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/Hotel/:id", function(req, res) {
+  app.get("/api/Hotel/:hotelName", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Post
     db.Hotel.findOne({
       where: {
+<<<<<<< HEAD
+        // id: req.params.id
+        hotelName: req.params.hotelName
+      }
+=======
         city: req.params.city,
         name: req.params.name
         },
       include: [db.Post]
+>>>>>>> 59464cbcc98753a45aed18bbbd6a2442d9dc1fe6
     }).then(function(dbHotel) {
       res.json(dbHotel);
+      console.log(dbHotel);
     });
   });
 

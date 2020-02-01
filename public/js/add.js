@@ -19,6 +19,52 @@ $("#add-btn").on("click", function(event) {
     Comments: $("#comments").val().trim()
   };
 
+  function createNewRow(newReview) {
+    //define card main container
+    var newReviewCard = $("<div>");
+    newReviewCard.addClass("card");
+
+    //define card header
+    var newReviewCardHeading = $("<div>");
+    newReviewCardHeading.addClass("card-header");
+    var newReviewAuthor = $("<h3>");
+    newReviewAuthor.text("Written by:" + newReview.Username);
+    newReviewAuthor.css({
+      float: "right",
+      color: "blue",
+      "margin-top":
+      "-10px"
+    });
+    var newReviewHotel = $("<h3>");
+    newReviewHotel.text("Written by:" + newReview.Hotel);
+    newReviewHotel.css({
+      float: "right",
+      color: "blue",
+      "margin-top":
+      "-10px"
+    });
+    var newReviewRatings = $("<h5>");
+
+    //define card body
+    var newReviewCardBody = $("<div>");
+    newReviewCardBody.addClass("card-body");
+    
+    //define card content body
+
+    var newReviewBody = $("<p>");
+    newReviewHotel.text(newReview.Hotel + "");
+    newReviewBody.text(newReview.Comments);
+    newReviewRatings.text(newReview.Ratings);
+    //append items to card body
+    newReviewCardHeading.append(newReviewAuthor);
+    newReviewCardHeading.append(newReviewHotel);
+    newReviewCardBody.append(newReviewBody);
+    newReviewCard.append(newReviewCardHeading);
+    newReviewCard.append(newReviewCardBody);
+    
+    return newReviewCard;
+  }
+
   // send an AJAX POST-request with jQuery
     // on success, run this callback
     $.post("/api/posts", newReview)

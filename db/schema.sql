@@ -9,14 +9,16 @@ CREATE TABLE author (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE hotels (
+CREATE TABLE Hotel (
     id int AUTO_INCREMENT NOT NULL,
-    hotel_name VARCHAR(50) NOT NULL,
-    hotel_address VARCHAR(50) NOT NULL,
-    hotel_city VARCHAR(30) NOT NULL,
-    review_text VARCHAR(250) NOT NULL,
-    hotel_ratings int,
+    hotelName VARCHAR(50) NOT NULL,
+    hotelAddress VARCHAR(50) NOT NULL,
+    hotelCity VARCHAR(30) NOT NULL,
+    reviewText VARCHAR(250) NOT NULL,
+    hotelRatings int,
     user_id int,
+    createAt date,
+    updateAt date,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES author(id)
 );
