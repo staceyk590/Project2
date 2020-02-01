@@ -2,20 +2,21 @@
 // In this case, the user submits a character's name... we then pass that character's name as a
 // URL parameter. Our server then performs the search to grab that character from the Database.
 
+$(document).ready(function(){
 // when user hits the search-btn
 $("#search-btn").on("click", function() {
   // save the character they typed into the character-search input
   var searchedHotel = $("#hotel-search")
     .val()
-    .trim();
-
+    .trim();  
+  // authorId = "/?author_id=" + authorId;
   // Using a RegEx Pattern to remove spaces from searchedCharacter
   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
   searchedHotel = searchedHotel.replace(/\s+/g, "").toLowerCase();
 
   // run an AJAX GET-request for our servers api,
   // including the user's character in the url
-  $.get("/api/" + searchedHotel, function(data) {
+  $.get("/api/Hotel/" + searchedHotel, function(data) {
     // log the data to our console
     console.log(data);
     // empty to well-section before adding new content
@@ -27,13 +28,18 @@ $("#search-btn").on("click", function() {
     else {
       // otherwise
       // append the Review name
-      $("#well-section").append("<h2>" + data.city + "</h2>");
+      $("#well-section").append("<h2>" + data.hotelCity + "</h2>");
       // the hotel
-      $("#well-section").append("<h3>Hotel: " + data.hotel + "</h3>");
+      $("#well-section").append("<h3>Hotel: " + data.hotelName + "</h3>");
       // the rating
-      $("#well-section").append("<h3>Ratings: " + data.rating + "</h3>");
+      $("#well-section").append("<h3>Ratings: " + data.hotelRatings + "</h3>");
       // and the comments
-      $("#well-section").append("<h3>Comments: " + data.comments + "</h3>");
+      $("#well-section").append("<h3>Comments: " + data.reviewText + "</h3>");
     }
   });
 });
+});
+
+
+
+

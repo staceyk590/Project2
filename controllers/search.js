@@ -5,13 +5,12 @@ var db = require("../models");
 module.exports = function(app){
     
     //GET route for retrieving search result
-    app.get("api/:city.:name", function(req,res){
+    app.get("api/Hotel/:hotelName", function(req,res){
         db.Hotel.findOne({
             where: {
-                city: req.param.city,
-                name: req.param.name
-            },
-            include: [db.Hotel]
+                hotelName: req.params.hotelName
+            }
+            // include: [db.Hotel]
         }).then(function(dbHotel){
             res.json(dbHotel);
         });
