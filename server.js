@@ -6,6 +6,8 @@
 // =============================================================
 const express = require("express");
 
+const passportlocal = require("passport-local");
+
 // Sets up the Express App
 // =============================================================
 const app = express();
@@ -42,3 +44,22 @@ db.sequelize.sync().then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+// setup passport app
+var passport = require('passport'),
+LocalStrategy = require('passport-local').Strategy;
+
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    User.findOne({ username: username }, function(err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (!user.validPassword(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  }
+));
