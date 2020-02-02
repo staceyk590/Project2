@@ -1,4 +1,5 @@
 const db = require("../models");
+const { Op } = require("sequelize");
 
 module.exports = function(app) {
   app.get("/api/Hotel", function(req, res) {
@@ -6,22 +7,39 @@ module.exports = function(app) {
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Post
     db.Hotel.findAll({
-      include: [db.Author]
+      // include: [db.Author]
     }).then(function(dbHotel) {
       res.json(dbHotel);
     });
   });
+  
+  app.get("/api/Hotel/:hotelName/:hotelCity", function(req, res) {
 
-  app.get("/api/Hotel/:hotelName", function(req, res) {
+    var hotelName = '%' + req.params.hotelName + '%';
+    var city = '%' + req.params.hotelCity + '%';
+
+    if(hotelName == null || city == null){
+      res.send("Please provide both city and hotel name");
+      res.end();
+    }
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Post
-    db.Hotel.findOne({
+    db.Hotel.findAll({
       where: {
-        city: req.params.city,
-        name: req.params.name
+        // hotelName: req.params.hotelName,
+        // hotelCity: req.params.hotelCity
+
+        hotelName: 
+        {
+          [Op.like]: hotelName
         },
-      include: [db.Post]
+        hotelCity: 
+        {
+          [Op.like]: city
+        }
+
+      }
     }).then(function(dbHotel) {
       res.json(dbHotel);
       console.log(dbHotel);
