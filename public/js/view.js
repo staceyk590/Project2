@@ -44,13 +44,27 @@ $("#search-btn").on("click", function() {
     else {
       // otherwise
       // append the Review name
-      $("#well-section").append("<h2>" +"City:" +" " + data.hotelCity + "</h2>");
+
       // the hotel
-      $("#well-section").append("<h3>Hotel: " + data.hotelName + "</h3>");
+    
+      $("#well-section").append("<h3>Hotel: " + data[0].hotelName + "</h3>");
+
+      // // the address
+      $("#well-section").append("<h4>Address: " + data[0].hotelAddress + "</h3>");
+
+      //the city
+
+      $("#well-section").append("<h4>" +"City:" +" " + data[0].hotelCity + "</h2>");
+
       // the rating
-      $("#well-section").append("<h3>Ratings: " + data.hotelRatings + "</h3>");
+      $("#well-section").append("<h4>Ratings: " + data[0].hotelRatings + "</h3>");
+
       // and the comments
-      $("#well-section").append("<h3>Comments: " + data.reviewText + "</h3>");
+      $("#well-section").append("<h5>Comments: " + data[0].reviewText + "</h5>");
+      // review author
+      
+      $("#well-section").append("<h5>Written By: " + data[0].authorReview + "</h5>");
+
     }
 
   

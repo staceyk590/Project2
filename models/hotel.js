@@ -34,6 +34,11 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false,
             // validate: [1]
+        },
+
+        authorReview: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     });
     return Hotel;

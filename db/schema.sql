@@ -17,8 +17,9 @@ CREATE TABLE Hotel (
     reviewText VARCHAR(250) NOT NULL,
     hotelRatings int,
     user_id int,
-    createAt date,
-    updateAt date,
+    authorReview VARCHAR(50) NOT NULL,
+    createdAt date,
+    updatedAt date,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES author(id)
 );
