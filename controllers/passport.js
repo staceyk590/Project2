@@ -1,3 +1,8 @@
+// Login page
+app.get('/login', (req, res) => res.send('Login'));
+
+// Register page
+app.get('/register', (req, res) => res.send('Register'));
 
 app.post('/login',
   passport.authenticate('local'),
