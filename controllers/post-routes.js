@@ -7,6 +7,8 @@
 
 // Requiring our models
 var db = require("../models");
+const express = require('express');
+
 
 // Routes
 // =============================================================
@@ -50,7 +52,9 @@ module.exports = function(app) {
     req.body.hotelRatings = parseInt(req.body.hotelRatings);
     db.Hotel.create(req.body).then(function(dbPost) {
       res.json(dbPost);
-    }).catch((err) => console.log(err));
+      
+      }).catch((err) => console.log(err));
+      
   });
 
   // DELETE route for deleting posts
