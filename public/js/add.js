@@ -8,7 +8,7 @@ $("#add-btn").on("click", function(event) {
   // make a newReview obj
   var newReview = {
     //username from usernam input
-    Username: $("#username").val().trim(),
+    authorReview: $("#username").val().trim(),
     // hotel from hotel input
     hotelName: $("#hotel-name").val().trim(),
     //hotel address
