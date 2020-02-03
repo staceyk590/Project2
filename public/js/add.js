@@ -7,6 +7,8 @@ $("#add-btn").on("click", function(event) {
 
   // make a newReview obj
   var newReview = {
+    //username from usernam input
+    authorReview: $("#username").val().trim(),
     // hotel from hotel input
     hotelName: $("#hotel-name").val().trim(),
     //hotel address
@@ -16,9 +18,7 @@ $("#add-btn").on("click", function(event) {
     // ratings from ratings input
     hotelRatings: parseInt($("#rating").val().trim()),
     // comments from comments input
-    reviewText: $("#comments").val().trim(),
-    //username from usernam input
-    authorReview: $("#username").val().trim(),
+    reviewText: $("#comments").val().trim()
   };
 
 
