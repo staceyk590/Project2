@@ -8,11 +8,7 @@
 // Requiring our models
 var db = require("../models");
 const express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
 
 // Routes
 // =============================================================
@@ -56,12 +52,7 @@ module.exports = function(app) {
     req.body.hotelRatings = parseInt(req.body.hotelRatings);
     db.Hotel.create(req.body).then(function(dbPost) {
       res.json(dbPost);
-      // return db.Hotel.create({
-      //   authorReview: req.body.authorReview,
-      //   hotelName: req.body.hotelName,
-      //   hotelAddress: req.body.hotelAddress,
-      //   hotelCity: req.body.hotelCity,
-      //   hotelRatings: req.body.hotelRatings
+      
       }).catch((err) => console.log(err));
       
   });
